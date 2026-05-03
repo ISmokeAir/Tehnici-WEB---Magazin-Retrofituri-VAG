@@ -1,0 +1,326 @@
+/* --- 1. Variabile Globale --- */
+:root {
+    --space-x: 10vw;
+    --grid-gap: 2rem;
+    --box-pad: 1.5rem;
+}
+
+html {
+    font-size: 18px;
+    transition: font-size 0.4s ease-in-out; 
+}
+
+body {
+    --color-bg: #f1f2f6;
+    --color-text: #1e272e;
+    --color-highlight: #0fbcf9;
+    --color-accent: #ff3f34;
+    --color-border: #d2dae2;
+    --color-surface: #ffffff;
+    --color-grad: #eccc68;
+    --color-shadow: rgba(0, 0, 0, 0.05);
+    --color-math-mn: #27ae60;
+    --color-highlight-light: #0fbcf91a;
+    --color-accent-light: #ff3f340d;
+
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 0 var(--space-x);
+    font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, caption {
+    font-family: 'Oswald', sans-serif;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5em; color: var(--color-highlight); }
+h2 { font-size: 1.8em; border-bottom: 2px solid var(--color-highlight); display: inline-block;}
+
+/* --- 2. Header & Footer --- */
+header {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    padding: 1rem var(--box-pad);
+    margin-bottom: var(--grid-gap);
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+header hgroup { margin-bottom: 0; flex: 1; min-width: 250px; }
+header h1 { font-size: 1.8em; margin-bottom: 0.2rem; }
+header p { font-size: 0.9em; margin-bottom: 0; }
+
+header nav ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+img.logo-header { max-width: 120px; margin: 0; }
+
+footer {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    padding: var(--box-pad);
+    margin-top: var(--grid-gap);
+    margin-bottom: 2rem;
+}
+
+/* --- 3. Grid Layout --- */
+.grid-layout {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+        "z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1"
+        "z2 z2 z2 z2 z2 z2 z8 z8 z8 z8 z8 z8"
+        "z5 z5 z5 z6 z6 z6 z8 z8 z8 z8 z8 z8"
+        "z4 z4 z4 z4 z3 z3 z3 z3 z7 z7 z7 z7";
+}
+
+.grid-layout > section {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    padding: var(--box-pad);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.grid-z1 { 
+    grid-area: z1; 
+    text-align: left; 
+    padding-left: 2rem;
+    background: linear-gradient(135deg, var(--color-surface), var(--color-grad)); 
+}
+.grid-z1 h2 { display: block; border-bottom: 2px solid var(--color-highlight); width: 100%; }
+
+.grid-z2 { grid-area: z2; }
+.grid-z3 { grid-area: z3; }
+.grid-z4 { grid-area: z4; }
+.grid-z5 { grid-area: z5; }
+.grid-z6 { grid-area: z6; }
+.grid-z7 { grid-area: z7; }
+.grid-z8 { grid-area: z8; }
+
+/* --- Responsive Mediu --- */
+@media screen and (max-width: 1024px) {
+    html { font-size: 16px; }
+    :root {
+        --space-x: 5vw;
+        --grid-gap: 1.2rem;
+    }
+    
+    .grid-layout {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+            "z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1"
+            "z2 z2 z2 z2 z2 z2 z8 z8 z8 z8 z8 z8"
+            "z5 z5 z5 z5 z5 z5 z8 z8 z8 z8 z8 z8"
+            "z6 z6 z6 z6 z6 z6 z4 z4 z4 z4 z4 z4"
+            "z3 z3 z3 z3 z3 z3 z7 z7 z7 z7 z7 z7";
+    }
+}
+
+/* --- Responsive Mic --- */
+@media screen and (max-width: 768px) {
+    html { font-size: 14px; }
+    :root {
+        --space-x: 2vw; 
+        --grid-gap: 0.8rem;
+    }
+    
+    .grid-layout {
+        display: block; 
+    }
+    .grid-layout > section { 
+        margin-bottom: var(--grid-gap); 
+    }
+}
+
+/* --- 4. Tabel --- */
+.tabel-wrapper {
+    overflow: hidden;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+table {
+    width: 100%;
+    caption-side: bottom;
+    background-color: var(--color-surface);
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.8em;
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+td:nth-child(odd), th:nth-child(odd) { background-color: var(--color-highlight-light); }
+td:nth-child(even), th:nth-child(even) { background-color: var(--color-accent-light); }
+
+td, th { transition: background-color 0.3s ease, color 0.3s ease; }
+
+tr:hover td, tr:hover th { background-color: var(--color-text); color: var(--color-surface); }
+tr:hover td:hover, tr:hover th:hover { background-color: var(--color-accent); color: var(--color-surface); }
+
+/* --- 5. Media --- */
+img, iframe, object, video {
+    width: 100%;
+    max-width: 600px;
+    min-width: 200px;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 8px;
+}
+
+img.logo-header { max-width: 250px; }
+img.img-mica { max-width: 200px; cursor: pointer; }
+iframe { aspect-ratio: 16/9; }
+
+@media screen and (max-width: 768px) {
+    img, iframe, object, video {
+        max-width: 100%;
+        min-width: 100px;
+    }
+}
+
+/* --- 6. Taburi Iframe --- */
+.container-iframe {
+    display: flex; 
+    align-items: flex-start;
+    gap: 0; 
+    margin: 1rem 0;
+}
+
+.container-iframe iframe {
+    border: 3px solid var(--color-highlight); 
+    position: relative;
+    z-index: 1; 
+    border-radius: 8px; 
+    background-color: var(--color-surface);
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column; 
+    gap: 0.5rem;
+    min-width: 150px;
+    position: relative;
+    z-index: 2;
+    margin-left: -10px; 
+    margin-top: 15px; 
+}
+
+.taburi-iframe a {
+    display: block;
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center;
+    background-color: var(--color-bg); 
+    border: 3px solid var(--color-highlight); 
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 8px 8px 0; 
+    transition: all 0.3s ease; 
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--color-surface); 
+    border-left-color: var(--color-surface); 
+    transform: translateX(8px);
+}
+
+@media screen and (max-width: 768px) {
+    .container-iframe { flex-direction: column; }
+    .taburi-iframe { 
+        flex-direction: row; 
+        width: 100%; 
+        overflow-x: auto; 
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: -10px;
+        order: -1; 
+    }
+    .taburi-iframe a { border-radius: 8px 8px 0 0; } 
+    .taburi-iframe a:hover {
+        transform: translateY(8px);
+        border-left-color: var(--color-highlight);
+        border-bottom-color: var(--color-surface);
+    }
+}
+
+/* --- 7. Link Top --- */
+#link-top {
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-text) 0%, var(--color-surface) 50%, var(--color-text) 100%);
+    border: 3px dashed var(--color-highlight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: opacity 0.5s, transform 0.5s linear, filter 0.5s linear;
+    z-index: 1000;
+}
+
+#triunghi {
+    color: var(--color-surface);
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.5s linear;
+}
+
+#link-top:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: rotate(360deg);
+}
+#link-top:hover #triunghi {
+    transform: rotate(-360deg);
+}
+
+@media screen and (max-width: 768px) {
+    * { animation: none !important; }
+}
+
+/* --- 8. MathML --- */
+math { 
+    font-size: 1.5em; 
+    background: var(--color-surface); 
+    padding: 0.5em; 
+    border-radius: 5px; 
+    display: block; 
+    overflow-x: auto; 
+    max-width: 100%; 
+}
+math mi { color: var(--color-highlight); font-style: italic; }
+math mo { color: var(--color-accent); font-weight: bold; }
+math mfrac { color: var(--color-text); }
+math mn { color: var(--color-math-mn); }
