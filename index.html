@@ -9,6 +9,16 @@
     
     <title>Magazin Retrofituri VAG | Piese Auto si Codari</title>
 
+    <!-- Fonturi si iconite -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="general.css">
+
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./resurse/ico/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon.svg">
@@ -19,115 +29,43 @@
 <body id="sus">
     <header>
         <hgroup>
-            <h1>Magazin Retrofituri VAG</h1>
+            <h1><i class="fa-solid fa-car"></i> Magazin Retrofituri VAG <i class="fa-solid fa-gear fa-spin"></i></h1>
             <p>Pasiunea pentru tehnologie auto la superlativ</p>
         </hgroup>
         <nav>
             <ul>
                 <li><a href="index.html">Acasă</a>
                     <ul>
-                        <li><a href="#despre">Despre noi</a></li>
-                        <li><a href="#evenimente">Evenimente Auto</a></li>
-                        <li><a href="#media">Media și Video</a></li>
-                        <li><a href="#produse">Produse și Servicii</a></li>
+                        <li><a href="#zona1">Prezentare</a></li>
+                        <li><a href="#zona2">Prețuri</a></li>
+                        <li><a href="#zona8">Media</a></li>
                     </ul>
                 </li>
                 <li><a href="produse.html">Produse</a></li>
                 <li><a href="servicii.html">Servicii</a></li>
             </ul>
         </nav>
-        <img src="./resurse/imagini/logo.png" alt="Sigla Magazin Retrofituri VAG" width="250">
+        <img src="./resurse/imagini/logo.png" alt="Sigla Magazin Retrofituri VAG" width="250" class="logo-header">
     </header>
 
-    <main>
-        <section id="despre">
+    <main class="grid-layout">
+        <!-- Zona 1: Prezentare -->
+        <section id="zona1" class="grid-z1">
             <h2>Bun venit la specialiștii în retrofit</h2>
             <article>
                 <h3>Cine suntem?</h3>
-                <p><strong>Atenție! Săptămâna aceasta oferim o reducere de 10% la toate manoperele de instalare!</strong></p>
-                <p>Suntem un magazin pasionat de <b>kituri complete</b> și <b>cablaje retrofit</b> pentru mașinile tale. Oferim soluții pentru <i>infotainment</i> și <i>cruise control</i>. De asemenea, realizăm <abbr title="Onboard Diagnostic Information System">ODIS</abbr> online și rezolvăm probleme de tip <dfn>Component Protection</dfn> (mecanism implementat de producător care blochează unitățile multimedia neîmperecheate).</p>
-                
-                <dl>
-                    <dt>Retrofit OEM</dt>
-                    <dd>Instalarea de piese originale exact cum ar fi ieșit mașina din fabrică.</dd>
-                    <dt>Diagnoză dedicată</dt>
-                    <dd>Folosirea interfețelor autorizate pentru a scana complet autovehiculul.</dd>
-                </dl>
-
+                <p><strong>Atenție! Reducere de 10% la toate manoperele de instalare!</strong></p>
+                <p>Suntem un magazin pasionat de <b>kituri complete</b> și <b>cablaje retrofit</b>. Oferim soluții pentru <i>infotainment</i>. Realizăm <abbr title="Onboard Diagnostic Information System">ODIS</abbr> online și rezolvăm probleme de tip <dfn>Component Protection</dfn>.</p>
                 <blockquote>
                     <q>O mașină fără opțiuni este ca un drum fără destinație.</q> - <cite>Revista Pasionaților Auto</cite>
                 </blockquote>
             </article>
-
-            <aside>
-                <h3>Informații Externe</h3>
-                <p>Documentația sistemului de scanare se află aici: <a href="https://www.ross-tech.com/vcds/tour/main_screen.php#example" target="_blank">https://www.ross-tech<wbr>.com/<wbr>vcds/<wbr>tour/<wbr>main_screen.php<wbr>#example</a></p>
-            </aside>
         </section>
 
-        <section id="evenimente">
-            <h2>Evenimente Comunitate Auto</h2>
-            <ol>
-                <li>
-                    <time datetime="2026-03-20T10:00">20 martie 2026, ora 10:00</time> - <b>Întâlnire Pasionați VAG</b>: Prezentăm noile funcții pentru platforma MQB evo și facem diagnoză gratis.
-                </li>
-                <li>
-                    <time datetime="2026-04-15T14:30">15 aprilie 2026, ora 14:30</time> - <b>Workshop instalare camere</b>: Demonstrație practică pe un autoturism VW Golf 8.
-                </li>
-            </ol>
-        </section>
-
-        <section id="media">
-            <h2>Media, Imagini și Video</h2>
-            
-            <article>
-                <h3>Galerie Instalări</h3>
-                <figure>
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="./resurse/imagini/camera_large.png">
-                        <source media="(min-width: 768px)" srcset="./resurse/imagini/camera_medium.png">
-                        <img src="./resurse/imagini/camera_small.png" alt="Instalare camera marsarier" title="Proces demontare haion" width="600">
-                    </picture>
-                    <figcaption>Etapele instalării unei camere de marșarier originale.</figcaption>
-                </figure>
-
-                <p>Click pe imaginea de mai jos pentru a o deschide mare (în același tab):</p>
-                <a href="./resurse/imagini/rezultat_mare.png"><img src="./resurse/imagini/rezultat_mic.png" alt="Rezultat final" width="200"></a>
-                
-                <p>Vă punem la dispoziție și o ofertă tipăribilă: <a href="./resurse/oferta.pdf" download="oferta_speciala_retrofit.pdf">Descarcă grila promoțională (PDF)</a>.</p>
-            </article>
-
-            <article>
-                <h3>Tutoriale Video (Iframe)</h3>
-                <div>
-                    <a href="https://www.youtube.com/embed/tgbNymZ7vqY" target="playerVideo">Video Test 1</a> | 
-                    <a href="https://www.youtube.com/embed/M7lc1UVf-VE" target="playerVideo">Video Test 2</a> |
-                    <a href="https://www.youtube.com/embed/zpOULjyy-n8" target="playerVideo">Video Test 3</a>
-                </div>
-                <iframe name="playerVideo" width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" allowfullscreen></iframe>
-            </article>
-
-            <article>
-                <h3>Playlist Automat (Bonus)</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=M7lc1UVf-VE,zpOULjyy-n8&loop=1&autoplay=1&mute=1" title="YouTube Playlist Player" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </article>
-        </section>
-
-        <section id="produse">
-            <h2>Statistici, Prețuri și Resurse</h2>
-            
-            <article>
-                <h3>Statistici Atelier (Tag Meter)</h3>
-                <p>Gradul de ocupare al garajului (programări): 
-                    <meter value="14" min="0" max="15" low="5" high="12" optimum="8">14 mașini</meter> (Foarte ocupat, peste limită)
-                </p>
-                <p>Număr de retururi în această lună: 
-                    <meter value="1" min="0" max="20" low="3" high="10" optimum="0">1 retur</meter> (Scăzut, excelent)
-                </p>
-            </article>
-
-            <article>
-                <h3>Tabel Prețuri Manoperă Retrofit</h3>
+        <!-- Zona 2: Tabel -->
+        <section id="zona2" class="grid-z2">
+            <h2>Tabel Prețuri Manoperă</h2>
+            <div class="tabel-wrapper">
                 <table>
                     <caption>Grila tarifară pentru instalări și codări</caption>
                     <thead>
@@ -139,86 +77,104 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Cameră Highline</td>
-                            <td>3 ore</td>
-                            <td>1500 RON</td>
-                            <td>400 RON</td>
-                        </tr>
-                        <tr>
-                            <td>Upgrade Navigație</td>
-                            <td>2 ore</td>
-                            <td>2500 RON</td>
-                            <td>300 RON</td>
-                        </tr>
-                        <tr>
-                            <td>Activare CarPlay</td>
-                            <td>30 min</td>
-                            <td>0 RON</td>
-                            <td>250 RON</td>
-                        </tr>
+                        <tr><td>Cameră Highline</td><td>3 ore</td><td>1500 RON</td><td>400 RON</td></tr>
+                        <tr><td>Upgrade Navigație</td><td>2 ore</td><td>2500 RON</td><td>300 RON</td></tr>
+                        <tr><td>Activare CarPlay</td><td>30 min</td><td>0 RON</td><td>250 RON</td></tr>
+                        <tr><td>Volan Sport</td><td>1 ora</td><td>1900 RON</td><td>200 RON</td></tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <th colspan="3">Total estimativ pachet complet</th>
-                            <th>950 RON</th>
-                        </tr>
+                        <tr><th colspan="3">Total estimativ pachet complet</th><th>1150 RON</th></tr>
                     </tfoot>
                 </table>
-            </article>
+            </div>
+        </section>
 
-            <article>
-                <h3>Întrebări Frecvente (FAQ)</h3>
-                <details>
-                    <summary>Pierd garanția mașinii dacă instalez aceste piese?</summary>
-                    <p>Nu, folosim exclusiv cablaje plug-and-play fără a tăia firele.</p>
-                </details>
-                <details>
-                    <summary>Oferiți suport pentru instalarea de tip DIY?</summary>
-                    <p>Da, pentru fiecare kit primiți manualele de instalare.</p>
-                </details>
-            </article>
+        <!-- Zona 3: Calendar -->
+        <section id="zona3" class="grid-z3">
+            <h2>Calendar Evenimente</h2>
+            <ol class="lista-custom">
+                <li><time datetime="2026-03-20T10:00">20 mar 2026</time> - <b>Întâlnire VAG</b></li>
+                <li><time datetime="2026-04-15T14:30">15 apr 2026</time> - <b>Workshop camere</b></li>
+            </ol>
+        </section>
 
-            <article>
-                <h3>Calcul Reducere Clienți (Bonus MathML)</h3>
-                <p>Formula calculării discount-ului pentru clienții fideli:</p>
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <mrow>
-                        <msub><mi>Preț</mi><mi>final</mi></msub>
-                        <mo>=</mo>
-                        <mi>Total</mi>
-                        <mo>-</mo>
-                        <mrow>
-                            <mo>(</mo>
-                            <mi>Total</mi>
-                            <mo>×</mo>
-                            <mfrac>
-                                <mn>10</mn>
-                                <mn>100</mn>
-                            </mfrac>
-                            <mo>)</mo>
-                        </mrow>
-                    </mrow>
-                </math>
-            </article>
+        <!-- Zona 4: Anunturi -->
+        <section id="zona4" class="grid-z4">
+            <h2>Anunțuri</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder pentru zona 4.</p>
+            <p>Documentația VCDS: <a href="https://www.ross-tech.com" target="_blank">Aici</a></p>
+        </section>
+
+        <!-- Zona 5: Lista Echipe -->
+        <section id="zona5" class="grid-z5">
+            <h2>Membri Echipă</h2>
+            <ul class="lista-custom">
+                <li>Marian - Electrician</li>
+                <li>Dorelina - Cablaje</li>
+                <li>Alex - Diagnoză</li>
+            </ul>
+        </section>
+
+        <!-- Zona 6: Statistici -->
+        <section id="zona6" class="grid-z6">
+            <h2>Statistici Atelier</h2>
+            <p>Grad ocupare: <meter value="14" min="0" max="15" low="5" high="12" optimum="8">14 mașini</meter></p>
+            <p>Retururi: <meter value="1" min="0" max="20" low="3" high="10" optimum="0">1 retur</meter></p>
+            <br>
+            <!-- Formula reducere -->
+            <h3>Reducere Clienți</h3>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                    <msub><mi>Preț</mi><mi>final</mi></msub>
+                    <mo>=</mo>
+                    <mi>Total</mi>
+                    <mo>-</mo>
+                    <mrow><mo>(</mo><mi>Total</mi><mo>×</mo><mfrac><mn>10</mn><mn>100</mn></mfrac><mo>)</mo></mrow>
+                </mrow>
+            </math>
+        </section>
+
+        <!-- Zona 7: Server -->
+        <section id="zona7" class="grid-z7">
+            <h2>Status Server</h2>
+            <p>Lorem ipsum dolor sit amet, server online. Placeholder zona 7.</p>
+        </section>
+
+        <!-- Zona 8: Diverse -->
+        <section id="zona8" class="grid-z8">
+            <h2>Media și Componente</h2>
             
-            <article>
-                <h3>Harta Interactivă Componente (Bonus Map)</h3>
-                <p>Faceți click pe zone din imagine (volan/navigație):</p>
-                <img src="./resurse/imagini/interior_auto.png" alt="Interior auto cu zone clickabile" usemap="#harta_interior" width="500">
-                <map name="harta_interior">
-                    <area shape="rect" coords="50,100,200,250" href="volane.html" alt="Volan Sport">
-                    <area shape="circle" coords="300,150,50" href="navigatii.html" alt="Sistem Infotainment">
-                </map>
-            </article>
+            <figure>
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="./resurse/imagini/camera_large.png">
+                    <source media="(min-width: 768px)" srcset="./resurse/imagini/camera_medium.png">
+                    <img src="./resurse/imagini/camera_small.png" alt="Instalare camera">
+                </picture>
+                <figcaption>Etapele instalării camerei.</figcaption>
+            </figure>
 
-            <article>
-                <h3>Manualul de utilizare ODIS (Bonus PDF)</h3>
-                <object data="./resurse/manual_odis.pdf" type="application/pdf" width="100%" height="400">
-                    <p>Browserul tău nu suportă PDF-uri. <a href="./resurse/manual_odis.pdf">Descarcă-l de aici</a>.</p>
-                </object>
-            </article>
+            <a href="./resurse/imagini/rezultat_mare.png"><img src="./resurse/imagini/rezultat_mic.png" alt="Rezultat final" class="img-mica"></a>
+            
+            <!-- Taburi Iframe -->
+            <h3>Tutoriale Video</h3>
+            <div class="container-iframe">
+                <iframe name="ifr-video" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+                <div class="taburi-iframe">
+                    <a href="https://www.youtube.com/embed/tgbNymZ7vqY" target="ifr-video">Video Test 1</a>
+                    <a href="https://www.youtube.com/embed/M7lc1UVf-VE" target="ifr-video">Video Test 2</a>
+                    <a href="https://www.youtube.com/embed/zpOULjyy-n8" target="ifr-video">Video Test 3</a>
+                </div>
+            </div>
 
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=M7lc1UVf-VE,zpOULjyy-n8&loop=1&autoplay=1&mute=1" allow="autoplay" allowfullscreen class="video-playlist"></iframe>
+            
+            <img src="./resurse/imagini/interior_auto.png" alt="Interior" usemap="#harta_interior">
+            <map name="harta_interior">
+                <area shape="rect" coords="50,100,200,250" href="volane.html" alt="Volan">
+            </map>
+
+            <object data="./resurse/manual_odis.pdf" type="application/pdf"></object>
+            <p><a href="./resurse/oferta.pdf" download="oferta_speciala_retrofit.pdf">Descarcă oferta (PDF)</a></p>
         </section>
     </main>
 
@@ -226,20 +182,17 @@
         <section id="contact">
             <h2>Contact și Locație</h2>
             <address>
-                Telefon: <a href="tel:+40712345678">0712 345 678</a><br>
-                Adresă (FMI): <a href="https://maps.app.goo.gl/k98kM..." target="_blank">Strada Academiei 14, București</a><br>
-                Email: <a href="mailto:contact@retrofitvag.ro">contact@retrofitvag.ro</a><br>
-                Chat Rapid: <a href="https://wa.me/40712345678" target="_blank">Scrie-ne pe WhatsApp</a>
+                Tel: <a href="tel:+40712345678">0712 345 678</a><br>
+                Adresă: <a href="https://maps.app.goo.gl/k98kM..." target="_blank">Strada Academiei 14, București</a><br>
+                Email: <a href="mailto:contact@retrofitvag.ro">contact@retrofitvag.ro</a>
             </address>
-
-            <h3>Locație Pe Hartă (Bonus)</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8453009363363!2d26.097561815523912!3d44.43588997910243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff473d0973a9%3A0x8085fc5763953460!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1680000000000!5m2!1sro!2sro" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Harta FMI Bucuresti"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8453009363363!2d26.0975618!3d44.4358899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sro!2sro!4v1" allowfullscreen="" loading="lazy"></iframe>
         </section>
-        
-        <p><a href="#sus">Înapoi la începutul paginii</a></p>
-        <p>
-            <small>Copyright &copy; <time datetime="2026-03-15">15 martie 2026</time> Licaret Matei</small>
-        </p>
+        <p><small>Copyright &copy; <time datetime="2026-03-15">15 martie 2026</time> Licaret Matei</small></p>
     </footer>
+
+    <a href="#sus" id="link-top" title="Revino rapid la începutul paginii">
+        <div id="triunghi">&#8593;</div>
+    </a>
 </body>
 </html>
