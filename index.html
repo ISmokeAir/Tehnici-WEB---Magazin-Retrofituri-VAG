@@ -2,6 +2,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Licaret Matei">
     <meta name="keywords" content="retrofit vag, piese auto vw audi, cablaje retrofit, kituri complete, codari auto">
     <meta name="description" content="Magazin specializat in kituri de retrofit, cablaje si codari pentru grupul auto VAG.">
@@ -18,6 +19,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="meniu.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./resurse/ico/favicon-96x96.png">
@@ -33,16 +35,30 @@
             <p>Pasiunea pentru tehnologie auto la superlativ</p>
         </hgroup>
         <nav>
-            <ul>
-                <li><a href="index.html">Acasă</a>
+            <!-- Toggle meniu mobil -->
+            <input type="checkbox" id="chk-meniu">
+            <label for="chk-meniu" id="hamburger-menu">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </label>
+            <ul class="meniu">
+                <li>
+                    <a href="index.html" class="link-acasa"><i class="fa-solid fa-house"></i> <span class="text-opt">Acasă</span></a>
                     <ul>
                         <li><a href="#zona1">Prezentare</a></li>
                         <li><a href="#zona2">Prețuri</a></li>
                         <li><a href="#zona8">Media</a></li>
                     </ul>
                 </li>
-                <li><a href="produse.html">Produse</a></li>
-                <li><a href="servicii.html">Servicii</a></li>
+                <li>
+                    <a href="produse.html"><i class="fa-solid fa-box"></i> <span class="text-opt">Produse</span></a>
+                    <ul>
+                        <li><a href="produse_noi.html">Kituri Noi</a></li>
+                        <li><a href="produse_sh.html">Piese SH</a></li>
+                    </ul>
+                </li>
+                <li><a href="servicii.html"><i class="fa-solid fa-wrench"></i> <span class="text-opt">Servicii</span></a></li>
             </ul>
         </nav>
         <img src="./resurse/imagini/logo.png" alt="Sigla Magazin Retrofituri VAG" width="250" class="logo-header">
@@ -189,6 +205,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8453009363363!2d26.0975618!3d44.4358899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sro!2sro!4v1" allowfullscreen="" loading="lazy"></iframe>
         </section>
         <p><small>Copyright &copy; <time datetime="2026-03-15">15 martie 2026</time> Licaret Matei</small></p>
+        <p id="banner-proiect">Acesta este un proiect școlar!</p>
     </footer>
 
     <a href="#sus" id="link-top" title="Revino rapid la începutul paginii">

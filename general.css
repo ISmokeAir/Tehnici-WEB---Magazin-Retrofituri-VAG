@@ -77,6 +77,11 @@ footer {
     margin-bottom: 2rem;
 }
 
+/* Ascunde banner normal */
+#banner-proiect {
+    display: none;
+}
+
 /* --- 3. Grid Layout --- */
 .grid-layout {
     display: grid;
@@ -306,10 +311,6 @@ iframe { aspect-ratio: 16/9; }
     transform: rotate(-360deg);
 }
 
-@media screen and (max-width: 768px) {
-    * { animation: none !important; }
-}
-
 /* --- 8. MathML --- */
 math { 
     font-size: 1.5em; 
@@ -324,3 +325,103 @@ math mi { color: var(--color-highlight); font-style: italic; }
 math mo { color: var(--color-accent); font-weight: bold; }
 math mfrac { color: var(--color-text); }
 math mn { color: var(--color-math-mn); }
+
+/* --- 9. Stiluri pentru Printare --- */
+@media print {
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+    @page :right {
+        margin-left: 0.5cm;
+        margin-right: 2.5cm;
+    }
+
+    /* Watermark */
+    html::before {
+        content: "Licaret Matei";
+        position: fixed;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        width: 100px;
+        height: 2cm;
+        border: 4px double black;
+        opacity: 0.65;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 9999;
+        pointer-events: none;
+        font-weight: bold;
+        color: black;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Banner printare */
+    #banner-proiect {
+        display: block;
+        order: -1;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 80%;
+        border: 2px dotted black;
+        text-align: center;
+        padding: 5px;
+        margin: 0;
+    }
+
+    /* Ascundere elemente */
+    img, video, iframe, object, picture, figure, figcaption, #link-top, map, area, nav, .container-iframe {
+        display: none !important;
+    }
+
+    /* Evitare tăiere secțiuni */
+    .grid-layout {
+        display: block !important;
+    }
+    .grid-layout > section {
+        display: block !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        box-shadow: none;
+    }
+
+    /* Resetare link-uri */
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+    /* Header printare */
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        page-break-after: always;
+        break-after: page;
+        box-shadow: none;
+        border: none;
+    }
+    header h1 {
+        font-size: 2.5rem !important;
+        text-decoration: underline !important;
+    }
+
+    /* Footer printare */
+    footer {
+        display: contents;
+    }
+    
+    footer > #contact {
+        page-break-before: always;
+        break-before: page;
+    }
+}
