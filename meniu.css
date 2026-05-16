@@ -1,0 +1,175 @@
+.meniu, .meniu li ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav {
+  position: relative;
+  z-index: 100;
+}
+
+#chk-meniu {
+  display: none;
+}
+
+#hamburger-menu {
+  display: none;
+  width: 35px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+}
+#hamburger-menu .bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--color-text);
+  transition: all 0.3s ease;
+}
+#hamburger-menu .bar.bar1 { top: 0; }
+#hamburger-menu .bar.bar2 { top: 10px; }
+#hamburger-menu .bar.bar3 { top: 20px; }
+
+.meniu {
+  display: flex;
+  gap: 1.5rem;
+}
+.meniu li {
+  position: relative;
+}
+.meniu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.meniu li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 188, 249, 0.2);
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+  transform-origin: center;
+  border-radius: 8px;
+}
+.meniu li a:hover::before {
+  transform: scale(1);
+}
+.meniu li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-surface);
+  min-width: 200px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  border-radius: 8px;
+  transform-origin: top left;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+.meniu li ul li a {
+  padding: 0.8rem 1rem;
+  font-weight: 400;
+}
+.meniu li ul li a::before {
+  display: none;
+}
+.meniu li ul li a:hover {
+  background-color: var(--color-highlight);
+  color: var(--color-surface);
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.meniu li:hover > ul {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 1024px) {
+  .meniu li a {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    justify-content: center;
+  }
+  .meniu li a .text-opt {
+    display: none !important;
+  }
+  .meniu li a i {
+    font-size: 1.4rem;
+  }
+  .meniu li ul li a {
+    justify-content: flex-start;
+  }
+  .meniu li ul li a .text-opt {
+    display: inline !important;
+  }
+}
+@keyframes appearBurger {
+  0% { opacity: 0; transform: scale(0.2) rotate(-90deg); background-color: var(--color-accent); }
+  50% { opacity: 0.5; transform: scale(1.2) rotate(20deg); background-color: var(--color-highlight); }
+  100% { opacity: 1; transform: scale(1) rotate(0); background-color: var(--color-text); }
+}
+@media screen and (max-width: 768px) {
+  nav { width: 100%; display: flex; justify-content: flex-end; }
+  #hamburger-menu { display: block; }
+  
+  #hamburger-menu .bar1 { opacity: 0; animation: appearBurger 0.6s ease forwards; animation-delay: 300ms; }
+  #hamburger-menu .bar2 { opacity: 0; animation: appearBurger 0.6s ease forwards; animation-delay: 600ms; }
+  #hamburger-menu .bar3 { opacity: 0; animation: appearBurger 0.6s ease forwards; animation-delay: 900ms; }
+  
+  #chk-meniu:checked ~ #hamburger-menu .bar1 { transform: translateY(10px) rotate(45deg); animation: none; opacity: 1; }
+  #chk-meniu:checked ~ #hamburger-menu .bar2 { opacity: 0; animation: none; }
+  #chk-meniu:checked ~ #hamburger-menu .bar3 { transform: translateY(-10px) rotate(-45deg); animation: none; opacity: 1; }
+  
+  .meniu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-surface);
+    min-width: 250px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    border-radius: 8px;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+  .meniu li { width: 100%; }
+  .meniu li a { padding: 1rem; }
+  .meniu li a .text-opt { display: inline !important; }
+  .meniu li a.link-acasa { justify-content: center; }
+  .meniu li a.link-acasa .text-opt { display: none !important; }
+  .meniu li a.link-acasa i { font-size: 2rem; }
+  .meniu li ul {
+    position: static;
+    width: 100%;
+    background-color: var(--color-highlight-light);
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 50% 0%, 0% 0%);
+    transition: max-height 0.4s ease-in-out, clip-path 0.4s ease-in-out, padding 0.4s ease-in-out;
+  }
+  .meniu li:hover > ul {
+    max-height: 500px;
+    padding-bottom: 2rem;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+  }
+  #chk-meniu:checked ~ .meniu { display: flex; }
+}
