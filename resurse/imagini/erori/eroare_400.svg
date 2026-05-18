@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#f8f9fa"/>
+  <rect x="60" y="40" width="160" height="200" rx="12" fill="#fff" stroke="#fd7e14" stroke-width="6"/>
+  <line x1="85" y1="75" x2="215" y2="75" stroke="#fd7e14" stroke-width="4"/>
+  <line x1="85" y1="100" x2="175" y2="100" stroke="#dee2e6" stroke-width="3"/>
+  <line x1="85" y1="118" x2="190" y2="118" stroke="#dee2e6" stroke-width="3"/>
+  <line x1="85" y1="136" x2="165" y2="136" stroke="#dee2e6" stroke-width="3"/>
+  <text x="150" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="48" font-weight="bold" fill="#fd7e14">400</text>
+  <text x="150" y="282" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6c757d">Bad Request</text>
+</svg>

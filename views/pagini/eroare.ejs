@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head') %>
+    <title><%= titlu %> | Magazin Retrofituri VAG</title>
+</head>
+
+<body id="sus">
+    <%- include('../fragmente/header') %>
+
+    <main>
+        <section style="text-align: center; padding: 3rem 2rem;">
+            <img src="<%= imagine %>" alt="<%= titlu %>" style="max-width: 200px; margin-bottom: 1.5rem;">
+            <h2><%= titlu %></h2>
+            <p><%= text %></p>
+            <br>
+            <a href="/">&#8592; Înapoi la pagina principală</a>
+        </section>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+
+    <a href="#sus" id="link-top" title="Revino rapid la începutul paginii">
+        <div id="triunghi">&#8593;</div>
+    </a>
+</body>
+</html>

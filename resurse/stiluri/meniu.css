@@ -1,0 +1,186 @@
+nav#nav-principal > ul > li > a, nav#nav-principal > ul > li > ul.submeniu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5em 0.85em;
+  border-radius: 8px;
+  position: relative;
+  isolation: isolate;
+  white-space: nowrap;
+  transition: color 0.35s ease;
+}
+nav#nav-principal > ul > li > a::before, nav#nav-principal > ul > li > ul.submeniu li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-highlight-light);
+  border-radius: inherit;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+nav#nav-principal > ul > li > a:hover::before, nav#nav-principal > ul > li > ul.submeniu li a:hover::before {
+  transform: scale(1);
+}
+
+nav#nav-principal > ul > li > ul.submeniu li a {
+  font-size: 0.9em;
+  border-radius: 6px;
+  font-weight: 400;
+  white-space: normal;
+}
+nav#nav-principal > ul > li > ul.submeniu li a:hover {
+  background: var(--color-highlight);
+  color: var(--color-surface);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+nav#nav-principal > ul > li > ul.submeniu li a:hover::before {
+  transform: scale(0);
+}
+
+nav#nav-principal > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.15em;
+  flex-wrap: wrap;
+}
+nav#nav-principal > ul > li {
+  position: relative;
+}
+nav#nav-principal > ul > li > ul.submeniu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 215px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px var(--color-shadow);
+  list-style: none;
+  padding: 0.4em;
+  margin: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.35s ease;
+  z-index: 1000;
+}
+nav#nav-principal > ul > li:hover > ul.submeniu, nav#nav-principal > ul > li:focus-within > ul.submeniu {
+  transform: scale(1);
+}
+
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 2px solid var(--color-highlight);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+#hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.4s ease, opacity 0.4s ease, background 0.4s ease;
+}
+
+#hamburger span:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+#hamburger span:nth-child(2) {
+  transition-delay: 50ms;
+}
+
+#hamburger span:nth-child(3) {
+  transition-delay: 100ms;
+}
+
+@media screen and (max-width: 1024px) {
+  nav#nav-principal > ul > li > a .nav-text {
+    display: none;
+  }
+  nav#nav-principal > ul > li > a {
+    font-size: 0.85em;
+    padding: 0.5em 0.6em;
+  }
+  nav#nav-principal > ul > li > ul.submeniu .nav-text {
+    display: inline;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hamburger {
+    display: flex;
+  }
+  nav#nav-principal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 20px var(--color-shadow);
+    z-index: 999;
+    padding: 0.5em;
+  }
+  nav#nav-principal.deschis {
+    display: block;
+  }
+  nav#nav-principal > ul {
+    flex-direction: column;
+    gap: 0.2em;
+  }
+  nav#nav-principal > ul > li > ul.submeniu {
+    position: static;
+    transform: none;
+    min-width: auto;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: var(--color-highlight-light);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 0.35s ease;
+    border-radius: 6px;
+    margin-top: 0.2em;
+  }
+  nav#nav-principal > ul > li > ul.submeniu li a {
+    padding-left: 2em;
+  }
+  nav#nav-principal > ul > li:hover > ul.submeniu, nav#nav-principal > ul > li:focus-within > ul.submeniu {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
+  }
+  nav#nav-principal > ul > li > ul.submeniu li:nth-child(1) {
+    transition-delay: 0ms;
+  }
+  nav#nav-principal > ul > li > ul.submeniu li:nth-child(2) {
+    transition-delay: 35ms;
+  }
+  nav#nav-principal > ul > li > ul.submeniu li:nth-child(3) {
+    transition-delay: 70ms;
+  }
+  nav#nav-principal > ul > li > ul.submeniu li:nth-child(4) {
+    transition-delay: 105ms;
+  }
+  nav#nav-principal > ul > li > ul.submeniu li:nth-child(5) {
+    transition-delay: 140ms;
+  }
+}
+
+/*# sourceMappingURL=meniu.css.map */

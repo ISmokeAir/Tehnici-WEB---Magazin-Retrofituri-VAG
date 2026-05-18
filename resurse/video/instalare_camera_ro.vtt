@@ -1,0 +1,26 @@
+WEBVTT
+
+STYLE
+::cue {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black;
+}
+
+00:00:01.000 --> 00:00:05.500
+Bun venit la ghidul de instalare a camerei de marșarier Highline VAG.
+
+00:00:06.000 --> 00:00:10.500
+Aveți nevoie de kitul cameră Highline, cablajul aferent și adaptorul OBD.
+
+00:00:11.000 --> 00:00:15.000 line:8% position:50% align:center
+⚠️ ATENȚIE: Deconectați bateria înainte de orice intervenție!
+
+00:00:11.000 --> 00:00:15.000 line:90% position:50% align:center
+Pasul 1 din 4 — Pregătire și siguranță
+
+00:00:16.000 --> 00:00:21.000
+Montați camera în suportul plăcuței de înmatriculare și conectați cablajul.
+
+00:00:22.000 --> 00:00:27.000
+Finalizați codarea modulului prin ODIS online sau VCDS. Succes!

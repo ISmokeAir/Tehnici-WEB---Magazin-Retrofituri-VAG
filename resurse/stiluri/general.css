@@ -22,6 +22,8 @@ body {
     --color-math-mn: #27ae60;
     --color-highlight-light: #0fbcf91a;
     --color-accent-light: #ff3f340d;
+    --color-visited: #a29bfe;
+    --color-c1: rgba(15, 188, 249, 0.35);
 
     font-family: 'Roboto', sans-serif;
     background-color: var(--color-bg);
@@ -47,25 +49,31 @@ header {
     box-shadow: 0 5px 15px var(--color-shadow);
     padding: 1rem var(--box-pad);
     margin-bottom: var(--grid-gap);
-    
+    position: relative;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
-header hgroup { margin-bottom: 0; flex: 1; min-width: 250px; }
+header hgroup { margin-bottom: 0; flex: 1; min-width: 220px; }
 header h1 { font-size: 1.8em; margin-bottom: 0.2rem; }
-header p { font-size: 0.9em; margin-bottom: 0; }
+header > p { font-size: 0.9em; margin-bottom: 0; }
 
-header nav ul {
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
 img.logo-header { max-width: 120px; margin: 0; }
+
+.info-utilizator {
+    font-size: 0.8em;
+    color: var(--color-text);
+    opacity: 0.7;
+    flex-basis: 100%;
+    text-align: right;
+}
+
+/* Bannerul e ascuns pe ecran, afisat doar la printare */
+.banner-scoala { display: none; }
 
 footer {
     background-color: var(--color-surface);
@@ -75,11 +83,6 @@ footer {
     padding: var(--box-pad);
     margin-top: var(--grid-gap);
     margin-bottom: 2rem;
-}
-
-/* Ascunde banner normal */
-#banner-proiect {
-    display: none;
 }
 
 /* --- 3. Grid Layout --- */
@@ -311,7 +314,25 @@ iframe { aspect-ratio: 16/9; }
     transform: rotate(-360deg);
 }
 
-/* --- 8. MathML --- */
+@media screen and (max-width: 768px) {
+    * { animation: none !important; }
+}
+
+/* --- 8. Video VTT --- */
+.video-instalare {
+    width: 80%;
+    min-width: 300px;
+    max-width: 720px;
+}
+
+::cue {
+    background: transparent;
+    color: white;
+    text-shadow: 1px 1px 2px black, -1px -1px 2px black,
+                 1px -1px 2px black, -1px  1px 2px black;
+}
+
+/* --- 9. MathML --- */
 math { 
     font-size: 1.5em; 
     background: var(--color-surface); 
@@ -326,102 +347,49 @@ math mo { color: var(--color-accent); font-weight: bold; }
 math mfrac { color: var(--color-text); }
 math mn { color: var(--color-math-mn); }
 
-/* --- 9. Stiluri pentru Printare --- */
-@media print {
-    @page :left {
-        margin-left: 2.5cm;
-        margin-right: 0.5cm;
-    }
-    @page :right {
-        margin-left: 0.5cm;
-        margin-right: 2.5cm;
-    }
+/* --- 10. Stilizare Linkuri --- */
 
-    /* Watermark */
-    html::before {
-        content: "Licaret Matei";
-        position: fixed;
-        top: 0; bottom: 0; left: 0; right: 0;
-        margin: auto;
-        width: 100px;
-        height: 2cm;
-        border: 4px double black;
-        opacity: 0.65;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        z-index: 9999;
-        pointer-events: none;
-        font-weight: bold;
-        color: black;
-    }
+/* Linkuri vizitate */
+a:visited {
+    color: var(--color-visited);
+}
 
-    body {
-        display: flex;
-        flex-direction: column;
-    }
+/* Linkuri externe: simbol generat inainte cu ::before */
+a[href^="http"]::before {
+    content: "⮳";
+    font-size: 1.5em;          /* cu 50% mai mare decat fontul linkului */
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    margin-right: 0.2em;
+    transition: color 0.3s ease;
+}
 
-    /* Banner printare */
-    #banner-proiect {
-        display: block;
-        order: -1;
-        position: absolute;
-        top: 0;
-        left: 10%;
-        width: 80%;
-        border: 2px dotted black;
-        text-align: center;
-        padding: 5px;
-        margin: 0;
-    }
+a[href^="http"]:hover::before {
+    color: var(--color-accent);
+}
 
-    /* Ascundere elemente */
-    img, video, iframe, object, picture, figure, figcaption, #link-top, map, area, nav, .container-iframe {
-        display: none !important;
-    }
+/* Linkuri din continut (main, nu din meniu) - pata de culoare radial gradient */
+main a {
+    background-image: radial-gradient(
+        circle,
+        var(--color-c1)   0%,
+        var(--color-c1)  40%,
+        transparent      80%,
+        transparent     100%
+    );
+    background-position: center;
+    background-size: 0;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease;
+}
 
-    /* Evitare tăiere secțiuni */
-    .grid-layout {
-        display: block !important;
-    }
-    .grid-layout > section {
-        display: block !important;
-        page-break-inside: avoid;
-        break-inside: avoid;
-        box-shadow: none;
-    }
+main a:hover {
+    background-size: 100%;
+}
 
-    /* Resetare link-uri */
-    a {
-        color: black !important;
-        text-decoration: none !important;
-    }
-
-    /* Header printare */
-    header {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        page-break-after: always;
-        break-after: page;
-        box-shadow: none;
-        border: none;
-    }
-    header h1 {
-        font-size: 2.5rem !important;
-        text-decoration: underline !important;
-    }
-
-    /* Footer printare */
-    footer {
-        display: contents;
-    }
-    
-    footer > #contact {
-        page-break-before: always;
-        break-before: page;
-    }
+/* Linkuri active (la click) */
+a:active {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }

@@ -1,68 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Licaret Matei">
-    <meta name="keywords" content="retrofit vag, piese auto vw audi, cablaje retrofit, kituri complete, codari auto">
-    <meta name="description" content="Magazin specializat in kituri de retrofit, cablaje si codari pentru grupul auto VAG.">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    
+    <%- include('../fragmente/head') %>
     <title>Magazin Retrofituri VAG | Piese Auto si Codari</title>
-
-    <!-- Fonturi si iconite -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="meniu.css">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./resurse/ico/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon.svg">
-    <link rel="shortcut icon" href="./resurse/ico/favicon.ico">
-    <link rel="manifest" href="./resurse/ico/site.webmanifest">
 </head>
 
 <body id="sus">
-    <header>
-        <hgroup>
-            <h1><i class="fa-solid fa-car"></i> Magazin Retrofituri VAG <i class="fa-solid fa-gear fa-spin"></i></h1>
-            <p>Pasiunea pentru tehnologie auto la superlativ</p>
-        </hgroup>
-        <nav>
-            <!-- Toggle meniu mobil -->
-            <input type="checkbox" id="chk-meniu">
-            <label for="chk-meniu" id="hamburger-menu">
-                <span class="bar bar1"></span>
-                <span class="bar bar2"></span>
-                <span class="bar bar3"></span>
-            </label>
-            <ul class="meniu">
-                <li>
-                    <a href="index.html" class="link-acasa"><i class="fa-solid fa-house"></i> <span class="text-opt">Acasă</span></a>
-                    <ul>
-                        <li><a href="#zona1">Prezentare</a></li>
-                        <li><a href="#zona2">Prețuri</a></li>
-                        <li><a href="#zona8">Media</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="produse.html"><i class="fa-solid fa-box"></i> <span class="text-opt">Produse</span></a>
-                    <ul>
-                        <li><a href="produse_noi.html">Kituri Noi</a></li>
-                        <li><a href="produse_sh.html">Piese SH</a></li>
-                    </ul>
-                </li>
-                <li><a href="servicii.html"><i class="fa-solid fa-wrench"></i> <span class="text-opt">Servicii</span></a></li>
-            </ul>
-        </nav>
-        <img src="./resurse/imagini/logo.png" alt="Sigla Magazin Retrofituri VAG" width="250" class="logo-header">
-    </header>
+    <%- include('../fragmente/header') %>
 
     <main class="grid-layout">
         <!-- Zona 1: Prezentare -->
@@ -109,16 +53,30 @@
         <section id="zona3" class="grid-z3">
             <h2>Calendar Evenimente</h2>
             <ol class="lista-custom">
-                <li><time datetime="2026-03-20T10:00">20 mar 2026</time> - <b>Întâlnire VAG</b></li>
-                <li><time datetime="2026-04-15T14:30">15 apr 2026</time> - <b>Workshop camere</b></li>
+                <li><time datetime="2026-03-20T10:00">20 mar 2026, ora 10:00</time> - <b>Întâlnire VAG</b> - Întâlnire lunară a pasionaților de retrofit; toți posesorii de Volkswagen, Audi, Škoda și SEAT sunt invitați.</li>
+                <li><time datetime="2026-04-15T14:30">15 apr 2026, ora 14:30</time> - <b>Workshop camere</b> - Workshop practic de instalare a camerelor Highline; locuri limitate, rezervare necesară.</li>
             </ol>
         </section>
 
         <!-- Zona 4: Anunturi -->
         <section id="zona4" class="grid-z4">
             <h2>Anunțuri</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder pentru zona 4.</p>
-            <p>Documentația VCDS: <a href="https://www.ross-tech.com" target="_blank">Aici</a></p>
+
+            <details>
+                <summary>Promoție: Reducere 15% la kituri de navigație (iulie 2026)</summary>
+                <p>Beneficiați de o reducere de 15% la toate kiturile de navigație în perioada 1–31 iulie 2026. Oferta nu se cumulează cu alte reduceri în curs.</p>
+            </details>
+
+            <details>
+                <summary>Program special în perioadele de sărbători</summary>
+                <p>În perioadele de sărbători, atelierul funcționează exclusiv pe baza programărilor prealabile. Contactați-ne telefonic sau prin email înainte de deplasare.</p>
+            </details>
+
+            <details>
+                <summary>Documentație tehnică VCDS și ODIS</summary>
+                <p>Referință completă pentru numere de produs VAG:</p>
+                <p><a href="https://www.ross-tech.com/vag-com/cars/VAG_Product_Numbers.html#cameras-retrofit" target="_blank">https://www.ross-tech.com/<wbr>vag-com/<wbr>cars/<wbr>VAG_Product_Numbers.html<wbr>#cameras-retrofit</a></p>
+            </details>
         </section>
 
         <!-- Zona 5: Lista Echipe -->
@@ -159,20 +117,43 @@
         <!-- Zona 8: Diverse -->
         <section id="zona8" class="grid-z8">
             <h2>Media și Componente</h2>
-            
+
             <figure>
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="./resurse/imagini/camera_large.png">
-                    <source media="(min-width: 768px)" srcset="./resurse/imagini/camera_medium.png">
-                    <img src="./resurse/imagini/camera_small.png" alt="Instalare camera">
+                    <source media="(min-width: 1024px)" srcset="/resurse/imagini/camera_large.png">
+                    <source media="(min-width: 768px)" srcset="/resurse/imagini/camera_medium.png">
+                    <img src="/resurse/imagini/camera_small.png" alt="Instalare camera" title="Etapele instalării camerei de marșarier Highline VAG">
                 </picture>
                 <figcaption>Etapele instalării camerei.</figcaption>
             </figure>
 
-            <a href="./resurse/imagini/rezultat_mare.png"><img src="./resurse/imagini/rezultat_mic.png" alt="Rezultat final" class="img-mica"></a>
-            
+            <a href="/resurse/imagini/rezultat_mare.png"><img src="/resurse/imagini/rezultat_mic.png" alt="Rezultat final" class="img-mica"></a>
+
+            <!-- Video local cu subtitrari VTT -->
+            <h3>Tutorial Instalare Cameră</h3>
+            <video
+                class="video-instalare"
+                poster="/resurse/imagini/camera_large.png"
+                controls
+                preload="none">
+                <source src="/resurse/video/instalare_camera.mp4" type="video/mp4">
+                <source src="/resurse/video/instalare_camera.webm" type="video/webm">
+                <track
+                    kind="subtitles"
+                    src="/resurse/video/instalare_camera_ro.vtt"
+                    srclang="ro"
+                    label="Română"
+                    default>
+                <track
+                    kind="subtitles"
+                    src="/resurse/video/instalare_camera_en.vtt"
+                    srclang="en"
+                    label="English">
+                <p>Browserul tău nu suportă elementul <code>video</code> HTML5.</p>
+            </video>
+
             <!-- Taburi Iframe -->
-            <h3>Tutoriale Video</h3>
+            <h3>Tutoriale Video YouTube</h3>
             <div class="container-iframe">
                 <iframe name="ifr-video" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
                 <div class="taburi-iframe">
@@ -183,30 +164,18 @@
             </div>
 
             <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=M7lc1UVf-VE,zpOULjyy-n8&loop=1&autoplay=1&mute=1" allow="autoplay" allowfullscreen class="video-playlist"></iframe>
-            
-            <img src="./resurse/imagini/interior_auto.png" alt="Interior" usemap="#harta_interior">
+
+            <img src="/resurse/imagini/interior_auto.png" alt="Interior" usemap="#harta_interior">
             <map name="harta_interior">
-                <area shape="rect" coords="50,100,200,250" href="volane.html" alt="Volan">
+                <area shape="rect" coords="50,100,200,250" href="/volane" alt="Volan">
             </map>
 
-            <object data="./resurse/manual_odis.pdf" type="application/pdf"></object>
-            <p><a href="./resurse/oferta.pdf" download="oferta_speciala_retrofit.pdf">Descarcă oferta (PDF)</a></p>
+            <object data="/resurse/documente/manual_odis.pdf" type="application/pdf"></object>
+            <p><a href="/resurse/documente/oferta.pdf" download="oferta_speciala_retrofit.pdf">Descarcă oferta (PDF)</a></p>
         </section>
     </main>
 
-    <footer>
-        <section id="contact">
-            <h2>Contact și Locație</h2>
-            <address>
-                Tel: <a href="tel:+40712345678">0712 345 678</a><br>
-                Adresă: <a href="https://maps.app.goo.gl/k98kM..." target="_blank">Strada Academiei 14, București</a><br>
-                Email: <a href="mailto:contact@retrofitvag.ro">contact@retrofitvag.ro</a>
-            </address>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8453009363363!2d26.0975618!3d44.4358899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sro!2sro!4v1" allowfullscreen="" loading="lazy"></iframe>
-        </section>
-        <p><small>Copyright &copy; <time datetime="2026-03-15">15 martie 2026</time> Licaret Matei</small></p>
-        <p id="banner-proiect">Acesta este un proiect școlar!</p>
-    </footer>
+    <%- include('../fragmente/footer') %>
 
     <a href="#sus" id="link-top" title="Revino rapid la începutul paginii">
         <div id="triunghi">&#8593;</div>

@@ -1,0 +1,37 @@
+{
+  "name": "magazin-retrofituri-vag",
+  "version": "1.0.0",
+  "description": "Magazin specializat in kituri de retrofit, cablaje si codari pentru grupul auto VAG.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "sass": "sass resurse/stiluri/meniu.scss resurse/stiluri/meniu.css",
+    "sass:watch": "sass --watch resurse/stiluri/meniu.scss resurse/stiluri/meniu.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISmokeAir/Tehnici-WEB---Magazin-Retrofituri-VAG.git"
+  },
+  "keywords": [
+    "retrofit",
+    "vag",
+    "piese auto",
+    "cablaje retrofit",
+    "codari auto"
+  ],
+  "author": "Licaret Matei",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ISmokeAir/Tehnici-WEB---Magazin-Retrofituri-VAG/issues"
+  },
+  "homepage": "https://github.com/ISmokeAir/Tehnici-WEB---Magazin-Retrofituri-VAG#readme",
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^4.22.2"
+  },
+  "devDependencies": {
+    "sass": "^1.99.0"
+  }
+}
