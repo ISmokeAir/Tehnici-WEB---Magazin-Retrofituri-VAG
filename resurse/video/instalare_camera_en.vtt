@@ -1,0 +1,26 @@
+WEBVTT
+
+STYLE
+::cue {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black;
+}
+
+00:00:01.000 --> 00:00:05.500
+Welcome to the Highline VAG backup camera installation guide.
+
+00:00:06.000 --> 00:00:10.500
+You will need the Highline camera kit, wiring harness and OBD adapter.
+
+00:00:11.000 --> 00:00:15.000 line:8% position:50% align:center
+⚠️ WARNING: Disconnect the battery before any work!
+
+00:00:11.000 --> 00:00:15.000 line:90% position:50% align:center
+Step 1 of 4 — Preparation and safety
+
+00:00:16.000 --> 00:00:21.000
+Install the camera in the license plate holder bracket and connect the wiring.
+
+00:00:22.000 --> 00:00:27.000
+Finalize coding of the module via ODIS online or VCDS. Good luck!

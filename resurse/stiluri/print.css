@@ -1,0 +1,110 @@
+@page :left {
+    margin-left: 2.5cm;
+    margin-right: 0.5cm;
+}
+
+@page :right {
+    margin-left: 0.5cm;
+    margin-right: 2.5cm;
+}
+
+@media print {
+
+    .banner-scoala {
+        display: block !important;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto 1cm auto;
+        border: 1px dotted black;
+        padding: 0.4em 1em;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    header {
+        height: 100vh;
+        display: block !important;
+        position: relative;
+        text-align: center;
+        page-break-after: always;
+        break-after: page;
+    }
+
+    header hgroup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    header hgroup h1 {
+        font-size: 2.5em;
+        text-decoration: underline;
+        color: black;
+    }
+
+    header nav,
+    header .logo-header,
+    header .info-utilizator,
+    #hamburger {
+        display: none !important;
+    }
+
+    video, iframe, object, embed, audio,
+    figure, figcaption,
+    .container-iframe,
+    .video-playlist,
+    .video-instalare,
+    map, area, img {
+        display: none !important;
+    }
+
+    #link-top { display: none !important; }
+
+    .grid-layout {
+        display: block !important;
+    }
+
+    .grid-layout > section {
+        margin-bottom: 1em;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    a, a:visited, a:hover, a:active {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    a[href^="http"]::before {
+        content: none !important;
+    }
+
+    main a {
+        background-image: none !important;
+    }
+
+    footer {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    body::after {
+        content: "Licaret Matei";
+        position: fixed;
+        bottom: 1cm;
+        right: 1cm;
+        width: 100px;
+        height: 2cm;
+        border: double 3px #333;
+        opacity: 0.65;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.75rem;
+        text-align: center;
+        padding: 0.2em;
+        background: white;
+    }
+}

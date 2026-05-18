@@ -1,0 +1,58 @@
+    <header>
+        <p class="banner-scoala">Acesta este un proiect școlar!</p>
+
+        <hgroup>
+            <h1><i class="fa-solid fa-car"></i> Magazin Retrofituri VAG <i class="fa-solid fa-gear fa-spin"></i></h1>
+            <p>Pasiunea pentru tehnologie auto la superlativ</p>
+        </hgroup>
+
+        <button id="hamburger" aria-label="Deschide meniu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-principal">
+            <ul>
+                <li>
+                    <a href="/"><i class="fa-solid fa-house"></i> <span class="nav-text">Acasă</span></a>
+                    <ul class="submeniu">
+                        <li><a href="/#zona1"><i class="fa-solid fa-star"></i> Prezentare</a></li>
+                        <li><a href="/#zona2"><i class="fa-solid fa-tags"></i> Prețuri</a></li>
+                        <li><a href="/#zona3"><i class="fa-solid fa-calendar"></i> Evenimente</a></li>
+                        <li><a href="/#zona8"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/despre"><i class="fa-solid fa-circle-info"></i> <span class="nav-text">Despre noi</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-box"></i> <span class="nav-text">Produse</span></a>
+                    <ul class="submeniu">
+                        <li><a href="/kituri"><i class="fa-solid fa-toolbox"></i> Kituri Retrofit</a></li>
+                        <li><a href="/cablaje"><i class="fa-solid fa-plug"></i> Cablaje</a></li>
+                        <li><a href="/produse"><i class="fa-solid fa-store"></i> Toate produsele</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/servicii"><i class="fa-solid fa-wrench"></i> <span class="nav-text">Servicii</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <img src="/resurse/imagini/logo.png" alt="Sigla Magazin Retrofituri VAG" width="250" class="logo-header">
+        <p class="info-utilizator">IP vizitator: <strong><%= ip %></strong></p>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navPrincipal = document.getElementById('nav-principal');
+        hamburger.addEventListener('click', function() {
+            navPrincipal.classList.toggle('deschis');
+        });
+        document.addEventListener('click', function(e) {
+            if (!navPrincipal.contains(e.target) && !hamburger.contains(e.target)) {
+                navPrincipal.classList.remove('deschis');
+            }
+        });
+    </script>
